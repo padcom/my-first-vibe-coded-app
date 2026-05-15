@@ -12,6 +12,7 @@
       </aside>
       <main class="content">
         <QuoteOfTheDay ref="quoteRef" />
+        <RandomImage />
       </main>
       <aside v-if="drawer" class="sidebar sidebarRight">
         <div class="sidebarTitle">{{ t('details') }}</div>
@@ -35,6 +36,7 @@ import { useI18n } from './i18n'
 import LanguageSelector from './components/LanguageSelector.vue'
 import QuoteOfTheDay from './components/QuoteOfTheDay.vue'
 import RefreshQuoteButton from './components/RefreshQuoteButton.vue'
+import RandomImage from './components/RandomImage.vue'
 
 const { t } = useI18n()
 watchEffect(() => { document.title = t('appTitle') })
