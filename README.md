@@ -18,6 +18,7 @@ npm run dev
 ## Interesting facts
 
 - The app was initially written in Vue.js, then converted to React where it was modified to add the Quote of the Day refresh feature, and then converted back to Vue.js.
+- The "favorite quotes" feature (heart button on quotes, persistent list in the sidebar) was entirely conceived and implemented automatically by Claude.
 
 ## Vibe coded
 

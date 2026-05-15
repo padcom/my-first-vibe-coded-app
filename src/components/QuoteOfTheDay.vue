@@ -6,15 +6,20 @@
       <div class="card-text">
         <p class="quote-text">"{{ quote.q }}"</p>
       </div>
-      <div class="card-subtitle">— {{ quote.a }}</div>
+      <div class="card-footer">
+        <span class="card-subtitle">— {{ quote.a }}</span>
+        <button class="fav-btn" :class="{ active: isFavorite(quote) }" @click="toggle(quote)">♥</button>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useQuoteOfTheDay } from '../composables/useQuoteOfTheDay'
+import { useFavorites } from '../composables/useFavorites'
 
 const { quote, loading, error, refresh } = useQuoteOfTheDay()
+const { isFavorite, toggle } = useFavorites()
 
 defineExpose({ refresh })
 </script>
@@ -45,9 +50,29 @@ defineExpose({ refresh })
   color: #212121;
 }
 
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px 8px 16px;
+}
+
 .card-subtitle {
-  padding: 0 16px 16px;
   font-size: 14px;
   color: #757575;
 }
+
+.fav-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #ccc;
+  padding: 4px 8px;
+  border-radius: 50%;
+  transition: color .2s, background .2s;
+}
+
+.fav-btn:hover { background: rgba(0,0,0,.06); }
+.fav-btn.active { color: #e53935; }
 </style>

@@ -4,4 +4,6 @@ export default {
   details: 'Details',
   footer: 'My first Vue application',
   refreshQuote: 'Refresh quote',
+  favorites: 'Favorites',
+  noFavorites: 'No favorite quotes yet.',
 }

@@ -4,4 +4,6 @@ export default {
   details: 'Detalles',
   footer: 'Mi primera aplicación Vue',
   refreshQuote: 'Actualizar cita',
+  favorites: 'Favoritos',
+  noFavorites: 'Aún no hay citas favoritas.',
 }

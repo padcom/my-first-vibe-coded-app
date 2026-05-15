@@ -7,8 +7,13 @@
     </header>
     <div class="layout">
       <aside v-if="drawer" class="sidebar sidebar-left">
-        <div class="sidebar-title">{{ t('navigation') }}</div>
+        <div class="sidebar-title">{{ t('favorites') }}</div>
         <hr class="divider" />
+        <div v-if="favorites.length === 0" class="sidebar-empty">{{ t('noFavorites') }}</div>
+        <div v-for="fav in favorites" :key="fav.q" class="fav-item">
+          <p class="fav-quote">"{{ fav.q }}"</p>
+          <p class="fav-author">— {{ fav.a }}</p>
+        </div>
       </aside>
       <main class="content">
         <QuoteOfTheDay ref="quoteRef" />
@@ -33,12 +38,14 @@
 <script setup lang="ts">
 import { ref, watchEffect, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useFavorites } from './composables/useFavorites'
 import LanguageSelector from './components/LanguageSelector.vue'
 import QuoteOfTheDay from './components/QuoteOfTheDay.vue'
 import RefreshQuoteButton from './components/RefreshQuoteButton.vue'
 import RandomImage from './components/RandomImage.vue'
 
 const { t } = useI18n()
+const { favorites } = useFavorites()
 watchEffect(() => { document.title = t('appTitle') })
 
 const drawer = ref(true)
@@ -144,5 +151,28 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
 .footer-logo {
   height: 24px;
   width: auto;
+}
+
+.sidebar-empty {
+  padding: 16px;
+  font-size: 13px;
+  color: #9e9e9e;
+}
+
+.fav-item {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.fav-quote {
+  font-size: 13px;
+  color: #212121;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.fav-author {
+  font-size: 12px;
+  color: #757575;
 }
 </style>
