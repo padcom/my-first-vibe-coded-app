@@ -25,20 +25,6 @@ defineExpose({ refresh })
   margin: 0 auto;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-
-.spinner {
-  width: 36px;
-  height: 36px;
-  border: 3px solid rgba(21,101,192,.2);
-  border-top-color: #1565C0;
-  border-radius: 50%;
-  animation: spin .8s linear infinite;
-  margin: 48px auto;
-}
-
 .alert {
   background: #FFEBEE;
   color: #B71C1C;
@@ -46,12 +32,6 @@ defineExpose({ refresh })
   border-radius: 4px;
   padding: 12px 16px;
   font-size: 14px;
-}
-
-.card {
-  background: #fff;
-  border-radius: 4px;
-  box-shadow: 0 2px 2px rgba(0,0,0,.14), 0 3px 1px rgba(0,0,0,.12), 0 1px 5px rgba(0,0,0,.2);
 }
 
 .cardText {
