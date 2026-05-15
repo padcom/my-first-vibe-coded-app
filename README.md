@@ -1,14 +1,14 @@
 # My First Vibe Coded App
 
-Aplikacja wyświetlająca cytat dnia (Quote of the Day). Użytkownik może odświeżyć cytat oraz przełączać język interfejsu. Panel boczny można pokazać lub ukryć przyciskiem w nagłówku (lub skrótem `Ctrl+X`).
+An app that displays a Quote of the Day. The user can refresh the quote and switch the interface language. The side panel can be shown or hidden using the button in the header (or the `Ctrl+X` shortcut).
 
-## Technologie
+## Technologies
 
-- [Vue 3](https://vuejs.org/) — framework frontendowy (Composition API)
-- [TypeScript](https://www.typescriptlang.org/) — typowanie statyczne
-- [Vite](https://vitejs.dev/) — bundler i serwer deweloperski
+- [Vue 3](https://vuejs.org/) — frontend framework (Composition API)
+- [TypeScript](https://www.typescriptlang.org/) — static typing
+- [Vite](https://vitejs.dev/) — bundler and dev server
 
-## Uruchomienie
+## Running
 
 ```bash
 npm install
@@ -17,4 +17,4 @@ npm run dev
 
 ## Vibe coded
 
-Ten projekt został w całości **vibe coded** — napisany z pomocą AI bez ręcznego planowania architektury, na wyczucie, krok po kroku. ✌️
+This project was entirely **vibe coded** — written with the help of AI, without manual architecture planning, step by step, going with the flow. ✌️
