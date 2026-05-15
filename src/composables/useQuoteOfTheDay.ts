@@ -1,9 +1,8 @@
 import { ref, onMounted } from 'vue'
+import type { Quote } from '../types/Quote'
+import { QuoteOfTheDay } from '../services/QuoteOfTheDay'
 
-interface Quote {
-  q: string
-  a: string
-}
+const service = new QuoteOfTheDay()
 
 export function useQuoteOfTheDay() {
   const quote = ref<Quote | null>(null)
@@ -14,13 +13,9 @@ export function useQuoteOfTheDay() {
     loading.value = true
     error.value = null
     try {
-      const res = await fetch('/api/today')
-      if (res.status !== 200) throw new Error(res.statusText)
-      const data: Quote[] = await res.json()
-      quote.value = data[0]
+      quote.value = await service.fetchRandomQuote()
     } catch (e) {
-      const msg = (e as Error).message
-      error.value = msg
+      error.value = (e as Error).message
     } finally {
       loading.value = false
     }

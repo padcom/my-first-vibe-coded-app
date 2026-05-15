@@ -1,9 +1,5 @@
 import { ref } from 'vue'
-
-export interface Quote {
-  q: string
-  a: string
-}
+import type { Quote } from '../types/Quote'
 
 const STORAGE_KEY = 'favorite-quotes'
 
