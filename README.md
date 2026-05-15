@@ -15,6 +15,10 @@ npm install
 npm run dev
 ```
 
+## Interesting facts
+
+- The app was initially written in Vue.js, then converted to React where it was modified to add the Quote of the Day refresh feature, and then converted back to Vue.js.
+
 ## Vibe coded
 
 This project was entirely **vibe coded** — written with the help of AI, without manual architecture planning, step by step, going with the flow. ✌️
