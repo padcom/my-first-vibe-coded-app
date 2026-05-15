@@ -1,5 +1,5 @@
 <template>
-  <button class="mdButton">{{ t('refreshQuote') }}</button>
+  <button class="md-button">{{ t('refreshQuote') }}</button>
 </template>
 
 <script setup lang="ts">
@@ -9,7 +9,7 @@ const { t } = useI18n()
 </script>
 
 <style scoped>
-.mdButton {
+.md-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -29,12 +29,12 @@ const { t } = useI18n()
   transition: box-shadow .28s cubic-bezier(.4,0,.2,1), background .28s cubic-bezier(.4,0,.2,1);
 }
 
-.mdButton:hover {
+.md-button:hover {
   background: #1976D2;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px rgba(0,0,0,.14), 0 1px 10px rgba(0,0,0,.12);
 }
 
-.mdButton:active {
+.md-button:active {
   box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
 }
 </style>

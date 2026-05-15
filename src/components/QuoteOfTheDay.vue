@@ -1,12 +1,12 @@
 <template>
-  <div class="quoteWrap">
+  <div class="quote-wrap">
     <div v-if="loading" class="spinner" />
     <div v-else-if="error" class="alert">{{ error }}</div>
     <div v-else-if="quote" class="card">
-      <div class="cardText">
-        <p class="quoteText">"{{ quote.q }}"</p>
+      <div class="card-text">
+        <p class="quote-text">"{{ quote.q }}"</p>
       </div>
-      <div class="cardSubtitle">— {{ quote.a }}</div>
+      <div class="card-subtitle">— {{ quote.a }}</div>
     </div>
   </div>
 </template>
@@ -20,7 +20,7 @@ defineExpose({ refresh })
 </script>
 
 <style scoped>
-.quoteWrap {
+.quote-wrap {
   max-width: 600px;
   margin: 0 auto;
 }
@@ -34,18 +34,18 @@ defineExpose({ refresh })
   font-size: 14px;
 }
 
-.cardText {
+.card-text {
   padding: 16px;
 }
 
-.quoteText {
+.quote-text {
   font-family: 'UnifrakturMaguntia', cursive;
   font-size: 24px;
   line-height: 1.6;
   color: #212121;
 }
 
-.cardSubtitle {
+.card-subtitle {
   padding: 0 16px 16px;
   font-size: 14px;
   color: #757575;

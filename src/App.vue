@@ -1,28 +1,28 @@
 <template>
   <div class="app">
-    <header class="appBar">
-      <button class="navIcon" @click="drawer = !drawer">&#9776;</button>
-      <span class="appBarTitle">{{ t('appTitle') }}</span>
+    <header class="app-bar">
+      <button class="nav-icon" @click="drawer = !drawer">&#9776;</button>
+      <span class="app-bar-title">{{ t('appTitle') }}</span>
       <LanguageSelector />
     </header>
     <div class="layout">
-      <aside v-if="drawer" class="sidebar sidebarLeft">
-        <div class="sidebarTitle">{{ t('navigation') }}</div>
+      <aside v-if="drawer" class="sidebar sidebar-left">
+        <div class="sidebar-title">{{ t('navigation') }}</div>
         <hr class="divider" />
       </aside>
       <main class="content">
         <QuoteOfTheDay ref="quoteRef" />
         <RandomImage />
       </main>
-      <aside v-if="drawer" class="sidebar sidebarRight">
-        <div class="sidebarTitle">{{ t('details') }}</div>
+      <aside v-if="drawer" class="sidebar sidebar-right">
+        <div class="sidebar-title">{{ t('details') }}</div>
         <hr class="divider" />
         <RefreshQuoteButton @click="quoteRef?.refresh()" />
       </aside>
     </div>
     <footer class="footer">
       <span>{{ t('footer') }}</span>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 261.76 226.69" class="footerLogo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 261.76 226.69" class="footer-logo">
         <path d="M161.096.001l-30.225 52.351L100.647.001H-.005l130.877 226.688L261.749.001z" fill="#41b883" />
         <path d="M161.096.001l-30.225 52.351L100.647.001H52.346l78.526 136.01L209.398.001z" fill="#34495e" />
       </svg>
@@ -59,7 +59,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
   height: 100vh;
 }
 
-.appBar {
+.app-bar {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -71,7 +71,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
   flex-shrink: 0;
 }
 
-.navIcon {
+.nav-icon {
   background: none;
   border: none;
   color: #fff;
@@ -85,9 +85,9 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
   justify-content: center;
 }
 
-.navIcon:hover { background: rgba(255,255,255,.1); }
+.nav-icon:hover { background: rgba(255,255,255,.1); }
 
-.appBarTitle {
+.app-bar-title {
   flex: 1;
   font-size: 20px;
   font-weight: 500;
@@ -107,10 +107,10 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
   overflow-y: auto;
 }
 
-.sidebarLeft { border-right: 1px solid rgba(0,0,0,.12); }
-.sidebarRight { border-left: 1px solid rgba(0,0,0,.12); }
+.sidebar-left { border-right: 1px solid rgba(0,0,0,.12); }
+.sidebar-right { border-left: 1px solid rgba(0,0,0,.12); }
 
-.sidebarTitle {
+.sidebar-title {
   padding: 16px;
   font-size: 14px;
   font-weight: 500;
@@ -141,7 +141,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeydown))
   flex-shrink: 0;
 }
 
-.footerLogo {
+.footer-logo {
   height: 24px;
   width: auto;
 }

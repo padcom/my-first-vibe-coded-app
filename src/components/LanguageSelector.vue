@@ -1,5 +1,5 @@
 <template>
-  <select class="langSelect" v-model="locale">
+  <select class="lang-select" v-model="locale">
     <option value="pl">Polski</option>
     <option value="en">English</option>
     <option value="de">Deutsch</option>
@@ -16,7 +16,7 @@ const { locale } = useI18n()
 </script>
 
 <style scoped>
-.langSelect {
+.lang-select {
   background: rgba(255,255,255,.15);
   border: 1px solid rgba(255,255,255,.4);
   color: #fff;
@@ -26,7 +26,7 @@ const { locale } = useI18n()
   cursor: pointer;
 }
 
-.langSelect option {
+.lang-select option {
   color: #000;
 }
 </style>

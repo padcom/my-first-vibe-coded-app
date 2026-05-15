@@ -1,5 +1,5 @@
 <template>
-  <div class="imageWrap">
+  <div class="image-wrap">
     <div v-if="loading" class="spinner" />
     <div class="card" :class="{ hidden: loading }">
       <img :src="imageUrl" class="image" @load="loading = false" @error="loading = false" />
@@ -24,7 +24,7 @@ defineExpose({ refresh })
 </script>
 
 <style scoped>
-.imageWrap {
+.image-wrap {
   max-width: 800px;
   margin: 18px auto 0;
 }
