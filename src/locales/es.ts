@@ -6,4 +6,6 @@ export default {
   refreshQuote: 'Actualizar cita',
   favorites: 'Favoritos',
   noFavorites: 'Aún no hay citas favoritas.',
+  copy: 'Copiar',
+  copied: '¡Copiado!',
 }

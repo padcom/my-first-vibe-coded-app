@@ -6,4 +6,6 @@ export default {
   refreshQuote: 'Aggiorna citazione',
   favorites: 'Preferiti',
   noFavorites: 'Nessuna citazione preferita ancora.',
+  copy: 'Copia',
+  copied: 'Copiato!',
 }

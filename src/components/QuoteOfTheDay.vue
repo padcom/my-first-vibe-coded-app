@@ -8,18 +8,33 @@
       </div>
       <div class="card-footer">
         <span class="card-subtitle">— {{ quote.a }}</span>
-        <button class="fav-btn" :class="{ active: isFavorite(quote) }" @click="toggle(quote)">♥</button>
+        <div class="card-actions">
+          <button class="copy-btn" @click="copy(quote)">{{ copied ? t('copied') : t('copy') }}</button>
+          <button class="fav-btn" :class="{ active: isFavorite(quote) }" @click="toggle(quote)">♥</button>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useQuoteOfTheDay } from '../composables/useQuoteOfTheDay'
 import { useFavorites } from '../composables/useFavorites'
+import type { Quote } from '../types/Quote'
 
+const { t } = useI18n()
 const { quote, loading, error, refresh } = useQuoteOfTheDay()
 const { isFavorite, toggle } = useFavorites()
+
+const copied = ref(false)
+
+async function copy(q: Quote) {
+  await navigator.clipboard.writeText(`"${q.q}" — ${q.a}`)
+  copied.value = true
+  setTimeout(() => { copied.value = false }, 2000)
+}
 
 defineExpose({ refresh })
 </script>
@@ -56,6 +71,26 @@ defineExpose({ refresh })
   justify-content: space-between;
   padding: 0 8px 8px 16px;
 }
+
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.copy-btn {
+  background: none;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  color: #9e9e9e;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: color .2s, background .2s;
+  min-width: 70px;
+}
+
+.copy-btn:hover { background: rgba(0,0,0,.06); color: #616161; }
 
 .card-subtitle {
   font-size: 14px;

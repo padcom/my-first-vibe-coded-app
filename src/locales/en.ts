@@ -6,4 +6,6 @@ export default {
   refreshQuote: 'Refresh quote',
   favorites: 'Favorites',
   noFavorites: 'No favorite quotes yet.',
+  copy: 'Copy',
+  copied: 'Copied!',
 }
