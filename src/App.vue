@@ -32,7 +32,7 @@
 
 <script setup lang="ts">
 import { ref, watchEffect, onMounted, onUnmounted } from 'vue'
-import { useI18n } from './i18n'
+import { useI18n } from 'vue-i18n'
 import LanguageSelector from './components/LanguageSelector.vue'
 import QuoteOfTheDay from './components/QuoteOfTheDay.vue'
 import RefreshQuoteButton from './components/RefreshQuoteButton.vue'
